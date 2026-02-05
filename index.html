@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First AI Website</title>
+  <style>
+    /* ====== General Styles ====== */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #4CAF50;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    h1 {
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      max-width: 700px;
+      margin: 10px auto 20px auto;
+    }
+
+    /* ====== Button ====== */
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* ====== Images ====== */
+    img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    /* ====== Sections ====== */
+    section {
+      padding: 50px 20px;
+      background-color: #f9f9f9;
+      margin: 20px 0;
+    }
+
+    /* ====== Contact Form ====== */
+    form {
+      display: inline-block;
+      text-align: left;
+      max-width: 400px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    form textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    /* ====== Chatbot ====== */
+    #chat {
+      max-width: 500px;
+      margin: 0 auto 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+    }
+
+    #chat input {
+      width: 70%;
+      display: inline-block;
+    }
+
+    #chat button {
+      width: 25%;
+      display: inline-block;
+    }
+
+    #botResponse {
+      margin-top: 15px;
+      font-style: italic;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== Navigation ====== -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#chat">Chatbot</a>
+  </nav>
+
+  <!-- ====== Home Section ====== -->
+  <section id="home">
+    <h1>Welcome to My AI Website</h1>
+    <p>This website is built completely for free using AI guidance and web technologies.</p>
+    <img src="https://via.placeholder.com/400x200" alt="Sample Image">
+    <button onclick="alert('Hello! You clicked the button 😊')">Click Me</button>
+  </section>
+
+  <!-- ====== About Section ====== -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>This simple website is designed for beginners to learn HTML, CSS, JavaScript, and free AI integration.</p>
+  </section>
+
+  <!-- ====== Contact Section ====== -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- ====== AI Chatbot Section ====== -->
+  <section id="chat">
+    <h2>AI Chatbot</h2>
+    <input type="text" id="userInput" placeholder="Ask me anything">
+    <button id="sendBtn">Send</button>
+    <p id="botResponse"></p>
+  </section>
+
+  <!-- ====== JavaScript ====== -->
+  <script>
+    // Contact Form
+    document.getElementById("contactForm").onsubmit = function(event) {
+      event.preventDefault(); // prevent page reload
+      alert("Thank you! Your message has been sent 😊");
+    };
+
+    // Chatbot
+    document.getElementById("sendBtn").onclick = function() {
+      let user = document.getElementById("userInput").value;
+      if(user.trim() === "") {
+        alert("Please type a message!");
+        return;
+      }
+      // Basic AI response (can be replaced with real API)
+      let bot = "AI says: You typed -> " + user;
+      document.getElementById("botResponse").innerText = bot;
+      document.getElementById("userInput").value = "";
+    };
+  </script>
+
+</body>
+</html>
+
