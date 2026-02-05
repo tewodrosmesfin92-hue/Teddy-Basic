@@ -47,7 +47,6 @@
       margin: 10px auto 20px auto;
     }
 
-    /* ====== Button ====== */
     button {
       padding: 10px 20px;
       font-size: 16px;
@@ -63,7 +62,6 @@
       background-color: #45a049;
     }
 
-    /* ====== Images ====== */
     img {
       max-width: 80%;
       height: auto;
@@ -71,38 +69,12 @@
       margin: 20px 0;
     }
 
-    /* ====== Sections ====== */
     section {
       padding: 50px 20px;
       background-color: #f9f9f9;
       margin: 20px 0;
     }
 
-    /* ====== Contact Form ====== */
-    form {
-      display: inline-block;
-      text-align: left;
-      max-width: 400px;
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
-
-    form textarea {
-      resize: none;
-      height: 100px;
-    }
-
-    /* ====== Chatbot ====== */
     #chat {
       max-width: 500px;
       margin: 0 auto 50px auto;
@@ -148,25 +120,19 @@
   </section>
 
   <!-- ====== About Section ====== -->
-  <section id="contact">
-  <h2>Contact Us</h2>
-  <script src="https://www.cognitoforms.com/f/seamless.js" 
-          data-key="q-MbteEC4Ua25s6OEkohqg" 
-          data-form="1">
-  </script>
-</section>
-
+  <section id="about">
+    <h2>About This Website</h2>
     <p>This simple website is designed for beginners to learn HTML, CSS, JavaScript, and free AI integration.</p>
   </section>
 
-  <!-- ====== Contact Section ====== -->
-  <form action="https://formspree.io/f/mayformid" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required><br><br>
-  <input type="email" name="email" placeholder="Your Email" required><br><br>
-  <textarea name="message" placeholder="Your Message" required></textarea><br><br>
-  <button type="submit">Send</button>
-</form>
-
+  <!-- ====== Contact Section with Cognito Form ====== -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <!-- Embed your Cognito Form -->
+    <script src="https://www.cognitoforms.com/f/seamless.js" 
+            data-key="q-MbteEC4Ua25s6OEkohqg" 
+            data-form="1">
+    </script>
   </section>
 
   <!-- ====== AI Chatbot Section ====== -->
@@ -179,20 +145,13 @@
 
   <!-- ====== JavaScript ====== -->
   <script>
-    // Contact Form
-    document.getElementById("contactForm").onsubmit = function(event) {
-      event.preventDefault(); // prevent page reload
-      alert("Thank you! Your message has been sent 😊");
-    };
-
-    // Chatbot
+    // Chatbot functionality
     document.getElementById("sendBtn").onclick = function() {
       let user = document.getElementById("userInput").value;
       if(user.trim() === "") {
         alert("Please type a message!");
         return;
       }
-      // Basic AI response (can be replaced with real API)
       let bot = "AI says: You typed -> " + user;
       document.getElementById("botResponse").innerText = bot;
       document.getElementById("userInput").value = "";
@@ -201,4 +160,3 @@
 
 </body>
 </html>
-
